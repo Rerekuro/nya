@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Letter to Number Converter</title>
+</head>
+<body>
+
+<h2>Letter to Number Converter</h2>
+
+<textarea id="inputText" rows="4" cols="50"></textarea><br>
+<button onclick="convertText()">Convert</button><br>
+<p id="outputText"></p>
+
+<script>
+function convertText() {
+    var inputText = document.getElementById("inputText").value;
+    var outputText = "";                                                                                                                                                                                    ";
+    for (var i = 0; i < inputText.length; i++) {
+        var letter = inputText[i].toLowerCase(); // Convert to lowercase for case insensitivity
+        var charCode = letter.charCodeAt(0);
+        var converted;
+        if (charCode >= 97 && charCode <= 122) { // Check if it's a letter
+            // Replace letters with corresponding numbers
+            switch (letter) {
+                case 'a':
+                    converted = '4';
+                    break;
+                case 'e':
+                    converted = '3';
+                    break;
+                case 'i':
+                    converted = '1';
+                    break;
+                case 'o':
+                    converted = '0';
+                    break;
+                case 'g':
+                    converted = '6';
+                    break;
+				case 'l':
+                    converted = '7';
+                    break;
+				case 'b':
+                    converted = '8';
+                    break;
+                default:
+                    converted = letter;
+            }
+        } else {
+            converted = letter;
+        }
+        outputText += converted;
+    }
+    document.getElementById("outputText").innerHTML = outputText;
+}
+</script>
+
+</body>
+</html>
